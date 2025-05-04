@@ -2,104 +2,60 @@
  * Site header
  */
 .site-header {
-  border-top: 5px solid $grey-color-dark;
-  border-bottom: 1px solid $grey-color-light;
   min-height: $spacing-unit * 1.865;
-
   // Positioning context for the mobile navigation icon
   position: relative;
 }
 
-.site-title {
-  @include relative-font-size(1.625);
-  font-weight: 300;
-  line-height: $base-line-height * $base-font-size * 2.25;
-  letter-spacing: -1px;
-  margin-bottom: 0;
-  float: left;
 
-  &,
-  &:visited {
-    color: $grey-color-dark;
-  }
+.header-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+
+.site-title {
+  font-size: 1.3em;
+  font-weight: 700;
+  position: static;
+  margin-right: auto;
+  padding: 1em 0;
+}
+
+.site-title-link {
+  text-decoration: none;
+  font-size: 1.1em;
+  font-weight: bold;
+  color: $text-color;
 }
 
 .site-nav {
-  float: right;
-  line-height: $base-line-height * $base-font-size * 2.25;
-
-  .nav-trigger {
-      display: none;
-  }
-
-  .menu-icon {
-    display: none;
-  }
+  text-align: center;
+  margin-top: 1em;
+  margin-bottom: 1em;
 
   .page-link {
+    font-size: 0.9em;
+    display: inline-block;
+    margin: 0 1em;
+    text-decoration: none;
     color: $text-color;
-    line-height: $base-line-height;
+    font-weight: bold;
+    padding: 0.4em 0.8em;
 
-    // Gaps between nav items, but not on the last one
-    &:not(:last-child) {
-      margin-right: 20px;
-    }
-  }
-
-  @include media-query($on-palm) {
-    position: absolute;
-    top: 9px;
-    right: $spacing-unit * 0.5;
-    background-color: $background-color;
-    border: 1px solid $grey-color-light;
-    border-radius: 5px;
-    text-align: right;
-
-    label[for="nav-trigger"] {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 36px;
-      z-index: 2;
-      cursor: pointer;
+    &.active {
+      background-color: #1e66a3;
+      color: white;
+      border-radius: 5px;
     }
 
-    .menu-icon {
-      display: block;
-      float: right;
-      width: 36px;
-      height: 26px;
-      line-height: 0;
-      padding-top: 10px;
-      text-align: center;
-
-      > svg {
-        fill: $grey-color-dark;
-      }
-    }
-
-    input ~ .trigger {
-      clear: both;
-      display: none;
-    }
-
-    input:checked ~ .trigger {
-      display: block;
-      padding-bottom: 5px;
-    }
-
-    .page-link {
-      display: block;
-      margin-left: 20px;
-      padding: 5px 10px;
-
-      &:not(:last-child) {
-        margin-right: 0;
-      }
+    &:hover:not(.active) {
+      text-decoration: underline;
     }
   }
 }
-
 
 
 /**
