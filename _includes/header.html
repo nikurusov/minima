@@ -1,11 +1,11 @@
 <header class="site-header" role="banner">
   <div class="wrapper header-flex">
     <div class="site-title">
-      <a href="/" class="site-title-link">Mikalai Urusau</a>
+      <a href="{{ '/' | relative_url }}" class="site-title-link">Mikalai Urusau</a>
     </div>
     <nav class="site-nav">
-      <a class="page-link{% if page.url == "/" %} active{% endif %}" href="/">Blog</a>
-      <a class="page-link{% if page.url contains '/about' %} active{% endif %}" href="/about">About</a>
+      <a class="page-link{% if page.url == '/' %} active{% endif %}" href="{{ '/' | relative_url }}">Blog</a>
+      <a class="page-link{% if page.url contains '/about' %} active{% endif %}" href="{{ '/about' | relative_url }}">About</a>
     </nav>
   </div>
 </header>
